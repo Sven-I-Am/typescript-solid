@@ -12,6 +12,7 @@
   - [The group](#the-group)
   - [Tools and languages used](#tools-and-languages-used)
   - [Timeline](#timeline)
+  - [What I learned from this exercise](#what-i-learned-from-this-exercise)
   - [To Do](#to-do)
     - [must-haves](#must-haves)
     - [Nice to have](#nice-to-have)
@@ -60,6 +61,31 @@ This week I'm flying solo.
     - By comparing the `old.ts` code with the new structure I feel like I understand the reasoning behind the Single Responsibility Principle
       - each class has only one reason to change and only exposes its information to the parts of the program it is relevant to
   - commit and push right after lunch because I forgot before checking out to eat
+  - **Exercise 1.O**
+    - first things first, I split the zoo and animal classes into their own respective files
+    - I whittled down the `class Zoo` to only be responsible for adding and displaying the animals it holds
+    - in `class Animal` I removed all specific species classes and made an over arching class that constructs a new Animal based on its type and sound
+    - In the new.ts I then added the logic to populate my zoo with some animals and display them in the browser.
+    - I end up getting an error `property 'type' does not exist on type 'Object'` and the same goes for sound.
+      - as far as I can figure it's because I had the return-type of `get animals` set to be `Array<object>` rather than `Array<any>`, that seems to have fixed the issue
+    - Having refactored the old.ts code combined with reading some sources I found that a lot of my previous code could probably use some refactoring as well. I have run into downstream breakage a lot before.
+
+## What I learned from this exercise
+
+SOLID principles help us write scalable, maintainable and flexible code that is easier to understand and modify than code that doesn't adhere to those principles.
+
+- **S = Single Responsibility Principle (SRP)**
+  - a given class or module can only be responsible for a single element of a program's functionality and only has one reason the change.
+  - This gives clearly defined boundaries to the implementation of functionality
+  - Using information-hiding protects the data integrity
+  - separation of concerns ensures changes in one location don't affect others
+    - for example: having multiple types of users using the same program but being able to adjust certain parts of the functionality without cascading those changes for other users.
+  - code maintenance becomes easier
+- **O = The Open and Closed Principle (OCP)**
+  - Classes and other entities should be open for extension but closed for modification
+  - It feels like implementing the OCP almost certainly causes the need to implement the SRP as well
+  - making the animal responsible for it's own sound, makes it that the zoo class never needs to be touched in order to add animals to it
+- **L = The Liskov Substitution Principle**
 
 ## To Do
 
@@ -72,8 +98,8 @@ objectives they will be moved up into the timeline section and ticked off using 
 - Install Parcel :heavy_check_mark:
 - Read [this article about typescript for Javascript Programmers](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html) :heavy_check_mark:
 - The SOLID principles:
-  - S: complete exercise 0.S to learn about the Single Responsibility Principle
-  - O: complete exercise 1.O to learn about the Open-Closed Principle
+  - S: complete exercise 0.S to learn about the Single Responsibility Principle :heavy_check_mark:
+  - O: complete exercise 1.O to learn about the Open-Closed Principle :heavy_check_mark:
   - L: complete exercise 2.L to learn about the Liskov Substitution Principle
   - I: complete exercise 3.I to learn about the Interface Segregation Principle
   - D: complete exercise 4.D to learn about the Dependency Inversion Principle
@@ -91,5 +117,5 @@ objectives they will be moved up into the timeline section and ticked off using 
    1. this will install the dev dependencies as specified in the `package.json` file
 4. you should now have both typescript and parcel installed for this project development
 5. to start the live compiled Parcel development server run `npm parcel src/index.html` replacing src with the proper directory
-6. If everything goes well you can `ctrl + left-click` to open the `http://localhost:1234` link in your browser
+6. If everything goes well you can now open the `http://localhost:1234` link in your browser
 7. All set!
