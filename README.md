@@ -50,6 +50,16 @@ This week I'm flying solo.
     - I tested things out by changing some of the TS code in the first exercise and checking the output results.
   - I also started this README file and as [coach Sicco](https://github.com/Sick-0) remarked on last week's exercise, I added [installation instructions](#installation-instructions) to my template
   - Doing the first commit of this exercise at :clock10: 9:45AM
+  - **Exercise 0.S**
+    - by separating `class Car` into it's smaller classes the code becomes more scalable and easier to read
+      - the exercise demands to at least separate out the engine and musicPlayer
+      - the Car still has control over the maximum fuel level, which can be split out into the `class Tank`
+    - I also decided to write each class in it's own file, again for better oversight.
+    - I ran into a strange problem where VSCode kept throwing errors in the car.ts file on non-existent lines
+      - it got fixed by restarting my IDE, still not sure what caused the issue.
+    - By comparing the `old.ts` code with the new structure I feel like I understand the reasoning behind the Single Responsibility Principle
+      - each class has only one reason to change and only exposes its information to the parts of the program it is relevant to
+  - commit and push right after lunch because I forgot before checking out to eat
 
 ## To Do
 
