@@ -2,11 +2,11 @@
 
 ### exercise in week 12 (13/12/2021 - 17/12/2021) of our BeCode training
 
-## Table of content
+# Table of content
 
 - [A deep dive into TypeScript and the SOLID principles](#a-deep-dive-into-typescript-and-the-solid-principles)
     - [exercise in week 12 (13/12/2021 - 17/12/2021) of our BeCode training](#exercise-in-week-12-13122021---17122021-of-our-becode-training)
-  - [Table of content](#table-of-content)
+- [Table of content](#table-of-content)
   - [Challenge](#challenge)
   - [The objective of this exercise](#the-objective-of-this-exercise)
   - [The group](#the-group)
@@ -17,6 +17,8 @@
     - [must-haves](#must-haves)
     - [Nice to have](#nice-to-have)
   - [Installation Instructions](#installation-instructions)
+
+* [Installation Instructions](#installation-instructions)
 
 ## Challenge
 
@@ -37,11 +39,11 @@ This week I'm flying solo.
 
 ## Tools and languages used
 
-|                                                |                                                 |     |
-| ---------------------------------------------- | ----------------------------------------------- | --- | --- |
-| ![windows10](Assets/Images/windows10-logo.png) | ![VSCode](Assets/Images/vscode-logo.png)        |     |
-| ![html](Assets/Images/html-logo.png)           | ![TypeSript](Assets/Images/Typescript-logo.png) |     |     |
-| ![git](Assets/Images/git-logo.png)             | ![github](Assets/Images/github-logo.png)        |     |
+|                                                |                                                 |
+| ---------------------------------------------- | ----------------------------------------------- |
+| ![windows10](Assets/Images/windows10-logo.png) | ![VSCode](Assets/Images/vscode-logo.png)        |
+| ![html](Assets/Images/html-logo.png)           | ![TypeSript](Assets/Images/Typescript-logo.png) |
+| ![git](Assets/Images/git-logo.png)             | ![github](Assets/Images/github-logo.png)        |
 
 ## Timeline
 
@@ -69,10 +71,20 @@ This week I'm flying solo.
     - I end up getting an error `property 'type' does not exist on type 'Object'` and the same goes for sound.
       - as far as I can figure it's because I had the return-type of `get animals` set to be `Array<object>` rather than `Array<any>`, that seems to have fixed the issue
     - Having refactored the old.ts code combined with reading some sources I found that a lot of my previous code could probably use some refactoring as well. I have run into downstream breakage a lot before.
+  - **Exercise 2.L**
+    - The Liskov Substitution Principle states that when using subTypes they can not break the constraints set by their parents
+    - For this exercise this meant creating an interface `Discount` which sets the functionality for it's implementers, aka all the discount types
+    - This was easy enough, just have to import the interface into each class and tell the class to implement it.
+    - I also took all other classes out of the old.ts code and separated them, importing what they needed when applicable
+      - example: the `class ShoppingBasket` needs access to the `class Product` so it gets imported
+    - I also added a line to clear the tableElement.innerHtml because compiling the new.ts file sometimes caused the duplication of the already existing table in the browser
+    - Having read a couple of articles about SOLID principles, the matter is starting to feel rather dense and obtuse so I asked [coach Tim](https://github.com/Timmeahj) for a broken down explanation in more understandable terms and I feel like I am starting to grasp things better now.
 
 ## What I learned from this exercise
 
 SOLID principles help us write scalable, maintainable and flexible code that is easier to understand and modify than code that doesn't adhere to those principles.
+One of the reasons why applying the SOLID principles from the start may be hard is because a lot of the time, even flawed code can still work fine. The issues usually only arise when we want to scale up the code or when maintenance starts becoming an issue.
+The biggest benefit I have seen so far is that finding what throws an error is a lot easier when your code is split up into smaller parts, each with their own tasks and properties. This makes testing portions of code a lot faster.
 
 - **S = Single Responsibility Principle (SRP)**
   - a given class or module can only be responsible for a single element of a program's functionality and only has one reason the change.
@@ -85,7 +97,11 @@ SOLID principles help us write scalable, maintainable and flexible code that is 
   - Classes and other entities should be open for extension but closed for modification
   - It feels like implementing the OCP almost certainly causes the need to implement the SRP as well
   - making the animal responsible for it's own sound, makes it that the zoo class never needs to be touched in order to add animals to it
-- **L = The Liskov Substitution Principle**
+- **L = The Liskov Substitution Principle (LSP)**
+  - In order to prevent unexpected behavior in Objects and their supTypes it is important to make sure subTypes never break the contracts set by their parent
+  - The why behind this principle is again, scalability, code extension and maintainability
+  - By adhering to the LSP, we can prevent an undesirable outcome when inserting new subClasses into working code
+- **I = Interface Segregation Principle (ISP)**
 
 ## To Do
 
@@ -100,7 +116,7 @@ objectives they will be moved up into the timeline section and ticked off using 
 - The SOLID principles:
   - S: complete exercise 0.S to learn about the Single Responsibility Principle :heavy_check_mark:
   - O: complete exercise 1.O to learn about the Open-Closed Principle :heavy_check_mark:
-  - L: complete exercise 2.L to learn about the Liskov Substitution Principle
+  - L: complete exercise 2.L to learn about the Liskov Substitution Principle :heavy_check_mark:
   - I: complete exercise 3.I to learn about the Interface Segregation Principle
   - D: complete exercise 4.D to learn about the Dependency Inversion Principle
 - Read the extra source material provided:
