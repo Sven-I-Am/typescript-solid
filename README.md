@@ -18,8 +18,6 @@
     - [Nice to have](#nice-to-have)
   - [Installation Instructions](#installation-instructions)
 
-* [Installation Instructions](#installation-instructions)
-
 ## Challenge
 
 After having used JavaScript for a while now, most of us are aware that it's not type safe out of the box.  
