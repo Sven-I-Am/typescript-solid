@@ -2,40 +2,38 @@
 
 ### exercise in week 12 (13/12/2021 - 17/12/2021) of our BeCode training
 
-# Table of content
+## Table of content
 
-- [A deep dive into TypeScript and the SOLID principles](#a-deep-dive-into-typescript-and-the-solid-principles)
-    - [exercise in week 12 (13/12/2021 - 17/12/2021) of our BeCode training](#exercise-in-week-12-13122021---17122021-of-our-becode-training)
-- [Table of content](#table-of-content)
-  - [Challenge](#challenge)
-  - [The objective of this exercise](#the-objective-of-this-exercise)
-  - [The group](#the-group)
-  - [Tools and languages used](#tools-and-languages-used)
-  - [Timeline](#timeline)
-  - [What I learned from this exercise](#what-i-learned-from-this-exercise)
-  - [To Do](#to-do)
-    - [must-haves](#must-haves)
-    - [Nice to have](#nice-to-have)
-  - [Installation Instructions](#installation-instructions)
+|     |                                                                         |
+| --- | ----------------------------------------------------------------------- |
+| 1   | [Challenge](#challenge)                                                 |
+| 2   | [The objective of this exercise](#the-objective-of-this-exercise)       |
+| 3   | [The group](#the-group)                                                 |
+| 4   | [Tools and languages used](#tools-and-languages-used)                   |
+| 5   | [Timeline](#timeline)                                                   |
+| 6   | [What I learned from this exercise](#what-i-learned-from-this-exercise) |
+| 7   | [To Do](#to-do)                                                         |
+| 8   | [Installation Instructions](#installation-instructions)                 |
+|     |
 
-## Challenge
+## 1. Challenge
 
 After having used JavaScript for a while now, most of us are aware that it's not type safe out of the box.  
 This week we are taking a harder look at TypeScript and the SOLID principles.  
 We've touched on typescript before, while using Angular for example, but it was never the focus of an exercise.  
 This exercise is divided into smaller sub-missions, each showing one of the SOLID principles.
 
-## The objective of this exercise
+## 2. The objective of this exercise
 
 - Install typescript and Parcel
 - Get some hands on experience with TypeScript
 - Get a deeper understanding of the SOLID principles
 
-## The group
+## 3. The group
 
 This week I'm flying solo.
 
-## Tools and languages used
+## 4. Tools and languages used
 
 |                                                |                                                 |
 | ---------------------------------------------- | ----------------------------------------------- |
@@ -43,7 +41,7 @@ This week I'm flying solo.
 | ![html](Assets/Images/html-logo.png)           | ![TypeSript](Assets/Images/Typescript-logo.png) |
 | ![git](Assets/Images/git-logo.png)             | ![github](Assets/Images/github-logo.png)        |
 
-## Timeline
+## 5. Timeline
 
 - Day 1 (:date: 14/12/2021)
   - I decided to get an early start today, since I was one of the learners that missed the official first day for this exercise due to a day of training with Becode partner [CeVoRa](https://www.cevora.be/) in preparation for our upcoming job and internship interviews
@@ -78,7 +76,7 @@ This week I'm flying solo.
     - I also added a line to clear the tableElement.innerHtml because compiling the new.ts file sometimes caused the duplication of the already existing table in the browser
     - Having read a couple of articles about SOLID principles, the matter is starting to feel rather dense and obtuse so I asked [coach Tim](https://github.com/Timmeahj) for a broken down explanation in more understandable terms and I feel like I am starting to grasp things better now.
 
-## What I learned from this exercise
+## 6. What I learned from this exercise
 
 SOLID principles help us write scalable, maintainable and flexible code that is easier to understand and modify than code that doesn't adhere to those principles.
 One of the reasons why applying the SOLID principles from the start may be hard is because a lot of the time, even flawed code can still work fine. The issues usually only arise when we want to scale up the code or when maintenance starts becoming an issue.
@@ -101,7 +99,7 @@ The biggest benefit I have seen so far is that finding what throws an error is a
   - By adhering to the LSP, we can prevent an undesirable outcome when inserting new subClasses into working code
 - **I = Interface Segregation Principle (ISP)**
 
-## To Do
+## 7. To Do
 
 This to do list is for personal use, the full to do list is added at the start of the challenge and as we complete
 objectives they will be moved up into the timeline section and ticked off using emotes such as :heavy_check_mark:
@@ -123,7 +121,7 @@ objectives they will be moved up into the timeline section and ticked off using 
 
 ### Nice to have
 
-## Installation Instructions
+## 8. Installation Instructions
 
 1. clone this repository to your local environment
 2. make sure you have [NodeJS installed](https://nodejs.org/en/)
