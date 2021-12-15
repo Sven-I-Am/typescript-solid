@@ -75,6 +75,14 @@ This week I'm flying solo.
       - example: the `class ShoppingBasket` needs access to the `class Product` so it gets imported
     - I also added a line to clear the tableElement.innerHtml because compiling the new.ts file sometimes caused the duplication of the already existing table in the browser
     - Having read a couple of articles about SOLID principles, the matter is starting to feel rather dense and obtuse so I asked [coach Tim](https://github.com/Timmeahj) for a broken down explanation in more understandable terms and I feel like I am starting to grasp things better now.
+  - **Exercise 3.I**
+    - This time we're taking a look at interface pollution and how to avoid it using the Interface Segregation Principle
+    - First thing I did was copy the old.ts code into a new.ts file and compiling it for use
+      - this makes sure that I can keep an eye on my functionality as I code, because I also have a parcel server running
+    - I split off the interface into 3 parts, each taking on one type of login method
+    - Then I created separate files for each of my user type classes, each implementing only the interface(s) they absolutely require
+    - I imported those classes back into the new.ts code and adjusted the html to allow for a google bot to check the google bot box
+    - By checking which of the checkboxes is checked (if any) I determine what kind of user is trying to log in
 
 ## 6. What I learned from this exercise
 
@@ -98,6 +106,10 @@ The biggest benefit I have seen so far is that finding what throws an error is a
   - The why behind this principle is again, scalability, code extension and maintainability
   - By adhering to the LSP, we can prevent an undesirable outcome when inserting new subClasses into working code
 - **I = Interface Segregation Principle (ISP)**
+  - By making interfaces as lean as possible and only as fat as needed, we can prevent unnecessary functionality on classes and entities that implement these interfaces
+  - From the start of a project always keep in mind what roles you want your interface to have.
+  - Keeping the number of roles down to a minimum, guarantees better scalability and maintainability
+    - I keep thinking of Tailwind CSS and it's utility based classes. Creating interfaces with just one role each makes sense to me. We can always just implement multiple interfaces when the situation calls for it
 
 ## 7. To Do
 
@@ -113,7 +125,7 @@ objectives they will be moved up into the timeline section and ticked off using 
   - S: complete exercise 0.S to learn about the Single Responsibility Principle :heavy_check_mark:
   - O: complete exercise 1.O to learn about the Open-Closed Principle :heavy_check_mark:
   - L: complete exercise 2.L to learn about the Liskov Substitution Principle :heavy_check_mark:
-  - I: complete exercise 3.I to learn about the Interface Segregation Principle
+  - I: complete exercise 3.I to learn about the Interface Segregation Principle :heavy_check_mark:
   - D: complete exercise 4.D to learn about the Dependency Inversion Principle
 - Read the extra source material provided:
   - [more about SOLID](https://medium.com/@severinperez/maintainable-code-and-the-open-closed-principle-b088c737262)
