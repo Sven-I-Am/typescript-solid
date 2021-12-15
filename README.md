@@ -83,6 +83,16 @@ This week I'm flying solo.
     - Then I created separate files for each of my user type classes, each implementing only the interface(s) they absolutely require
     - I imported those classes back into the new.ts code and adjusted the html to allow for a google bot to check the google bot box
     - By checking which of the checkboxes is checked (if any) I determine what kind of user is trying to log in
+  - **Exercise 4.D**
+    - The Dependency Inversion Principle states that upper level classes as well as lower level classes should depend on an interface instead of each other
+    - In this exercise that means separating the Restaurant from the oven by adding an appliance interface between them
+    - I started by copying all the old.ts code into a new.ts file and compiling it for use
+    - Then I took out the oven class and had it implement the interface Appliance which I created
+    - I also split the Restaurant class into a separate file and had that implement the Appliance interface instead of directly calling on the Oven
+    - By giving the appliance more generic method names it can now be implemented by different types of appliances without having the Restaurant specifically call for those classes.
+    - turnOn and turnOf instead of lightGas and extinguishGas makes it possible to add an electric stove to the restaurant.
+    - I also created a class Stove that creates an electric stove based on the appliance interface
+    - After compiling again the output appears to work as intended
 
 ## 6. What I learned from this exercise
 
@@ -110,6 +120,9 @@ The biggest benefit I have seen so far is that finding what throws an error is a
   - From the start of a project always keep in mind what roles you want your interface to have.
   - Keeping the number of roles down to a minimum, guarantees better scalability and maintainability
     - I keep thinking of Tailwind CSS and it's utility based classes. Creating interfaces with just one role each makes sense to me. We can always just implement multiple interfaces when the situation calls for it
+- **D = Dependency Inversion Principle (DIP)**
+  - It felt like this principle is an almost natural consequence of implementing the previous principles
+  - By adding an interface that both the upper level and lower level depends on instead of having those depend on each other adds a sort of buffer between the classes
 
 ## 7. To Do
 
@@ -126,10 +139,10 @@ objectives they will be moved up into the timeline section and ticked off using 
   - O: complete exercise 1.O to learn about the Open-Closed Principle :heavy_check_mark:
   - L: complete exercise 2.L to learn about the Liskov Substitution Principle :heavy_check_mark:
   - I: complete exercise 3.I to learn about the Interface Segregation Principle :heavy_check_mark:
-  - D: complete exercise 4.D to learn about the Dependency Inversion Principle
+  - D: complete exercise 4.D to learn about the Dependency Inversion Principle :heavy_check_mark:
 - Read the extra source material provided:
-  - [more about SOLID](https://medium.com/@severinperez/maintainable-code-and-the-open-closed-principle-b088c737262)
-  - [Typescript with SOLIDprinciples](https://itnext.io/brutally-solid-typescript-ba745585f440)
+  - [more about SOLID](https://medium.com/@severinperez/maintainable-code-and-the-open-closed-principle-b088c737262) :heavy_check_mark:
+  - [Typescript with SOLIDprinciples](https://itnext.io/brutally-solid-typescript-ba745585f440) :heavy_check_mark:
 
 ### Nice to have
 
